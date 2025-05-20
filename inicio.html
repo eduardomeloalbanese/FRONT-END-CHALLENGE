@@ -45,7 +45,9 @@
     }
 
     #logo {
-       width: 800px
+        height: 150px;
+  max-width: 1000px; /* ajuste conforme necessário */
+  width: auto;  
     }
 
     .menu-toggle {
@@ -85,6 +87,26 @@
     .section {
       padding: 2rem;
       text-align: center;
+    }
+
+    .section img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    margin-left: auto;   
+    margin-right: auto;  
+    }
+
+    .section .medalha_homepage {
+    display: block;
+    max-width: 50%;
+    height: auto; 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    margin-left: auto;   
+    margin-right: auto;  
     }
 
     .section h2 {
@@ -215,18 +237,19 @@
 
   <section class="hero">
     <img src="acompanhamento_idoso.png" alt="Banner principal - Acompanhamento de saúde nas suas mãos">
-    <h1>Acompanhamento de saúde nas suas mãos</h1>
+    <h1>Cuide do seu Bem mais Precioso!</h1>
   </section>
 
   <section class="section">
     <h2>Sua presença vale <span class="highlight">OURO!</span></h2>
     <p>Participe das consultas e conquiste premiações pela sua saúde!</p>
+    <img src="consulta marcada.png" alt="">
     <a href="#" class="btn">Eu quero</a>
   </section>
 
   <section class="section">
-    <img src="consultas-marcadas.png" alt="Consultas marcadas" class="consultas-img">
-    <h2>Veja suas Consultas <strong>MARCADAS</strong></h2>
+    <h2>Veja suas Medalhas <strong>CONQUISTADAS</strong></h2>
+    <img id="medalha_homepage" src="medalhaconsulta_homepage.png" alt="">
     <a href="#" class="btn">Ver agora</a>
   </section>
 
