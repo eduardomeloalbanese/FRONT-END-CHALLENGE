@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoriza Saúde</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoriza Saúde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-    <style>
-         header {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    header {
       background: #f9f9f9;
       padding: 1rem 2rem;
       display: flex;
@@ -35,9 +47,9 @@
     }
 
     #logo {
-        height: 150px;
-        max-width: 1000px; /* ajuste conforme necessário */
-        width: auto;  
+      height: 150px;
+      max-width: 1000px;
+      width: auto;
     }
 
     .menu-toggle {
@@ -51,7 +63,47 @@
       height: 3px;
       background-color: #333;
       margin: 4px 0;
+    }
 
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #666;
     }
 
     footer {
@@ -60,6 +112,7 @@
       text-align: center;
       font-size: 0.9rem;
       border-top: 1px solid #ddd;
+      margin-top: auto;
     }
 
     footer a {
@@ -67,49 +120,112 @@
       color: #333;
       text-decoration: none;
     }
+        /* Responsividade e menu mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
 
-    </style>
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f9f9f9;
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1300px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
     <header>
-    <img src="logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#lembretes">Lembretes</a>
-      <a href="#recompensas">Recompensa</a>
-      <a href="#contato">Contato</a>
-      <a href="#integrantes">Integrantes</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </header>
+      <img src="logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
+<div class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('active')">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav id="nav">
+        <a href="inicio.html">Início</a>
+        <a href="#lembretes">Lembretes</a>
+        <a href="#recompensas">Recompensa</a>
+        <a href="#contato">Contato</a>
+        <a href="#integrantes">Integrantes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
 
-    <h1>Identificação dos Alunos</h1>
-  <div class="container">
-    <div class="card">
-      <img src="nathan.jpg" alt="Foto de Nathan" />
-      <h2>Nathan</h2>
-      <p>RM: 564666</p>
-    </div>
-    <div class="card">
-      <img src="guilherme.jpg" alt="Foto de Guilherme" />
-      <h2>Guilherme de Andrade Martini</h2>
-      <p>RM: 566087</p>
-    </div>
-    <div class="card">
-      <img src="eduardo.jpg" alt="Foto de Eduardo" />
-      <h2>Eduardo de Melo Albanese</h2>
-      <p>RM: 561790</p>
-
+    <main>
+      <h1>Identificação dos Alunos</h1>
+      <div class="container">
+        <div class="card">
+          <img src="foto_nathan.jpg" alt="Foto de Nathan" />
+          <h2>Nathan Gonçalves Pereira Mendes</h2>
+          <p>RM: 564666</p>
+        </div>
+        <div class="card">
+          <img src="foto_guilherme.jpg" alt="Foto de Guilherme" />
+          <h2>Guilherme de Andrade Martini</h2>
+          <p>RM: 566087</p>
+        </div>
+        <div class="card">
+          <img src="foto_eduardo.png" alt="Foto de Eduardo" />
+          <h2>Eduardo de Melo Albanese</h2>
+          <p>RM: 561790</p>
+        </div>
+      </div>
+    </main>
 
     <footer>
-        <a href="#faq">FAQ</a> |
-        <a href="#contato">Contato</a> |
-        <a href="#lembretes">Lembretes</a> |
-        <a href="#recompensas">Recompensa</a>
+      <a href="#faq">FAQ</a> |
+      <a href="#contato">Contato</a> |
+      <a href="#lembretes">Lembretes</a> |
+      <a href="#recompensas">Recompensa</a>
     </footer>
-
+  </div>
 </body>
 </html>
