@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoriza Saúde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #f9f9f9;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    #logo {
+        height: 150px;
+  max-width: 1000px; /* ajuste conforme necessário */
+  width: auto;  
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: #FFEFD2;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      color: #3D3D3D;
+      margin-top: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .section img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    margin-left: auto;   
+    margin-right: auto;  
+    }
+
+    .img-centralizada {
+    display: block;
+    max-width: 30%; 
+    width: 75%;
+    height: 60%;
+    border-radius: 12px;
+    margin: 20px auto;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #3D3D3D;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #7FAF95;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      color: #C2A32E;
+      font-weight: 800;
+    }
+
+    .consultas-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Responsividade e menu mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f9f9f9;
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1300px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  color: #555;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.mensagem {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imagens/logomemorizasaude.png" alt="Memoriza Saúde" id="logo">
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#lembretes">Lembretes</a>
+      <a href="#recompensas">Recompensa</a>
+      <a href="#contato">Contato</a>
+      <a href="#integrantes">Integrantes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+ 
+
+
+  <div class="container">
+    <h1> Contato</h1>
+    <form id="contatoForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="telefone">Número de Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+
+      <label for="email">Endereço de E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="endereco">Endereço Físico:</label>
+      <input type="text" id="endereco" name="endereco">
+
+      <label for="redes">Redes Sociais:</label>
+      <input type="text" id="redes" name="redes" placeholder="Ex: @usuario - Instagram, LinkedIn...">
+
+      <label for="infoAdicional">Informações Adicionais:</label>
+      <textarea id="infoAdicional" name="infoAdicional" rows="4" placeholder="Ex: Cargo, empresa, interesses..."></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" class="mensagem"></div>
+  </div>
+  <footer>
+    <a href="#faq">FAQ</a> |
+    <a href="#contato">Contato</a> |
+    <a href="#lembretes">Lembretes</a> |
+    <a href="#recompensas">Recompensa</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
