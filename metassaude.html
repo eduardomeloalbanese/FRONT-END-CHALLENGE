@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoriza Saúde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #f9f9f9;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    #logo {
+        height: 150px;
+  max-width: 1000px; /* ajuste conforme necessário */
+  width: auto;  
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: #FFEFD2;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      color: #3D3D3D;
+      margin-top: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .section img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    margin-left: auto;   
+    margin-right: auto;  
+    }
+
+    .img-centralizada {
+    display: block;
+    max-width: 30%; 
+    width: 75%;
+    height: 60%;
+    border-radius: 12px;
+    margin: 20px auto;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #3D3D3D;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #7FAF95;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      color: #C2A32E;
+      font-weight: 800;
+    }
+
+    .consultas-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Responsividade e menu mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f9f9f9;
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1300px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+    body {
+  font-family: sans-serif;
+  font-size: 1.2em;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 20px;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+button {
+  font-size: 1em;
+  padding: 12px 20px;
+  margin-top: 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f7f;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 1em;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#lembretes">Lembretes</a>
+      <a href="#recompensas">Recompensa</a>
+      <a href="#contato">Contato</a>
+      <a href="#integrantes">Integrantes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+  </header>
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Metas de Saúde para Idosos</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <nav>
+        <a href="#diariosaude">Diário de Saúde</a>
+        <a href="#lembretes">Lembretes</a>
+        <a href="#metassaude">Metas de Saúde</a>
+        
+      </nav>
+
+<h1>Metas de Saúde</h1>
+<br>
+<br>
+
+    <main>
+      <h1>🎯 Minhas Metas de Saúde</h1>
+  
+      <section id="lembrete">
+        <h2>📅 Próxima Consulta</h2>
+        <p id="consultaText">Você tem uma consulta de rotina amanhã. Isso ajuda a cuidar da sua pressão e bem-estar.</p>
+        <button onclick="lerTexto('consultaText')">🔊 Ouvir</button>
+      </section>
+  
+      <section id="diario">
+        <h2>📔 Diário da Saúde</h2>
+        <label for="atividade">O que você fez hoje?</label>
+        <textarea id="atividade" placeholder="Escreva aqui..."></textarea>
+        <button onclick="registrarAtividade()">✅ Registrar</button>
+        <p id="mensagemMotivacional"></p>
+      </section>
+  
+      <section id="medalha">
+        <h2>🏅 Conquista da Semana</h2>
+        <p id="conquista">Complete suas metas da semana para ganhar uma medalha!</p>
+        <button onclick="ganharMedalha()">🎉 Ver Medalha</button>
+        <p id="medalhaMensagem"></p>
+      </section>
+    </main>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
+
+  <footer>
+    <a href="#faq">FAQ</a> |
+    <a href="#contato">Contato</a> |
+    <a href="#lembretes">Lembretes</a> |
+    <a href="#recompensas">Recompensa</a>
+  </footer>
+</body>
+</html>

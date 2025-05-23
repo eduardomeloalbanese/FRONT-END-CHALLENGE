@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoriza Saúde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin-left: 10px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #f9f9f9;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    #logo {
+        height: 150px;
+  max-width: 1000px; /* ajuste conforme necessário */
+  width: auto;  
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: #FFEFD2;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      color: #3D3D3D;
+      margin-top: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .section img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    margin-left: auto;   
+    margin-right: auto;  
+    }
+
+    .img-centralizada {
+    display: block;
+    max-width: 30%; 
+    width: 75%;
+    height: 60%;
+    border-radius: 12px;
+    margin: 20px auto;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #3D3D3D;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #7FAF95;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      color: #C2A32E;
+      font-weight: 800;
+    }
+
+    .consultas-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Responsividade e menu mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f9f9f9;
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1300px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+
+header {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 1em;
+  text-align: center;
+ 
+}
+
+main {
+  padding: 1em;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 15%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input {
+  padding: 0.75em;
+  font-size: 1.1em;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: rgb(255, 255, 255);
+  padding: 1em;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.registros {
+  margin-top: 2em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #000000;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-left: 6px solid #4CAF50;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+div{
+  padding-left: 800px;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logomemorizasaude.png" alt="Memoriza Saúde" id="logo">
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#lembretes">Lembretes</a>
+      <a href="#recompensas">Recompensa</a>
+      <a href="#contato">Contato</a>
+      <a href="#integrantes">Integrantes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+   
+  </header>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Diário de Saúde</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>
+      <h1> Diário de Saúde</h1>
+      <p>Sua saúde em primeiro lugar, com carinho e simplicidade.</p>
+    </div>
+  
+    <main>
+      <section class="form-section">
+        <h2>Registre seu dia</h2>
+        <form id="diario-form">
+          <label>
+             Alimentação:
+            <input type="text" id="alimentacao" placeholder="O que você comeu hoje?" />
+          </label>
+  
+          <label>
+             Caminhada:
+            <input type="text" id="caminhada" placeholder="Fez alguma caminhada?" />
+          </label>
+  
+          <label>
+             Sono:
+            <input type="text" id="sono" placeholder="Como dormiu?" />
+          </label>
+  
+          <label>
+             Humor:
+            <input type="text" id="humor" placeholder="Como se sentiu hoje?" />
+          </label>
+
+          <label>
+            Como foi o seu dia:
+           <input type="text" id="humor" placeholder="Oque você fez hoje?" />
+         </label>
+  
+          <button type="submit">Salvar Registro</button>
+        </form>
+      </section>
+  
+      <section class="registros">
+        <h2>📅 Registros da Semana</h2>
+        <ul id="registros-lista"></ul>
+      </section>
+    </main>
+  
+    <footer>
+      <p> Você está cuidando de si. Continue assim!</p>
+    </footer>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
+
+  <footer>
+    <a href="#faq">FAQ</a> |
+    <a href="#contato">Contato</a> |
+    <a href="#lembretes">Lembretes</a> |
+    <a href="#recompensas">Recompensa</a>
+  </footer>
+</body>
+</html>
