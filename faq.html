@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Memoriza Saúde</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
+    /* Reset e fonte */
     * {
       margin: 0;
       padding: 0;
@@ -13,10 +14,24 @@
       font-family: 'Inter', sans-serif;
     }
 
+    /* Definir altura total para html e body */
+    html, body {
+      height: 100%;
+    }
+
+    /* Usar flex no body para colocar footer no fim */
     body {
       background-color: #fff;
       color: #333;
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Container do conteúdo principal com flex-grow para empurrar footer */
+    .content {
+      flex: 1;
     }
 
     header {
@@ -128,10 +143,7 @@
       text-decoration: none;
       border-radius: 8px;
       margin: 20px auto 0 auto;
-    
     }
-
- 
 
     .highlight {
       color: #C2A32E;
@@ -150,6 +162,8 @@
       text-align: center;
       font-size: 0.9rem;
       border-top: 1px solid #ddd;
+      /* Footer sempre no fim */
+      /* Removido position fixed para que o footer fique ao final do conteúdo */
     }
 
     footer a {
@@ -243,12 +257,11 @@
       color: green;
       font-weight: bold;
     }
-
   </style>
 </head>
 <body>
   <header>
-    <img src="img_contato/logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
+    <img src="img_contato/logo_memorizasaude.png" alt="Memoriza Saúde" id="logo" />
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
       <div class="bar"></div>
       <div class="bar"></div>
@@ -264,33 +277,26 @@
     </nav>
   </header>
 
-  <div class="section" id="contato">
-    <h2>Entre em Contato</h2>
-    <p>Preencha o formulário abaixo e fale conosco.</p>
+  <!-- Div que envolve o conteúdo principal para ocupar espaço -->
+  <div class="content">
+    <div class="section" id="faq">
+      <h2>Perguntas Frequentes</h2>
 
-    <form id="contatoForm">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <div class="faq-item">
+        <h3>🧓 O que é isso?</h3>
+        <p>É um ajudante no seu celular feito pra te lembrar das consultas, dos exames e te ajudar a cuidar da sua saúde de forma fácil e divertida. A cada vez que você cuida da sua saúde — como ir na consulta, tomar seus remédios ou anotar como você está se sentindo — você ganha medalhas e mensagens de parabéns. Isso te motiva e te mostra que você está no caminho certo!</p>
+      </div>
 
-      <label for="telefone">Número de Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required>
+      <div class="faq-item">
+        <h3>💙 Como isso vai me ajudar?</h3>
+        <p>Ele te avisa do dia da consulta, te explica pra que ela serve, te dá dicas pra se cuidar no dia a dia e ainda te incentiva com mensagens carinhosas e conquistas. Assim, fica mais fácil lembrar e cuidar da sua saúde.</p>
+      </div>
 
-      <label for="email">Endereço de E-mail:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="endereco">Endereço Físico:</label>
-      <input type="text" id="endereco" name="endereco">
-
-      <label for="redes">Redes Sociais:</label>
-      <input type="text" id="redes" name="redes" placeholder="Ex: @usuario - Instagram, LinkedIn...">
-
-      <label for="infoAdicional">Informações Adicionais:</label>
-      <textarea id="infoAdicional" name="infoAdicional" rows="4" placeholder="Ex: Cargo, empresa, interesses..."></textarea>
-
-      <button class="btn" type="submit">Enviar</button>
-    </form>
-
-    <div id="mensagem" class="mensagem"></div>
+      <div class="faq-item">
+        <h3>📱 Meu celular simples funciona?</h3>
+        <p>Funciona sim! Foi feito pensando em quem tem celular mais simples e até quem tem dificuldade com internet. Os botões são grandes, tem leitura em voz alta e até funciona sem internet em várias partes, como no seu caderno de saúde.</p>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -301,11 +307,14 @@
   </footer>
 
   <script>
-    document.getElementById('contatoForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('mensagem').textContent = 'Mensagem enviada com sucesso!';
-      document.getElementById('contatoForm').reset();
-    });
+    const form = document.getElementById('contatoForm');
+    if(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('mensagem').textContent = 'Mensagem enviada com sucesso!';
+        form.reset();
+      });
+    }
   </script>
 </body>
 </html>

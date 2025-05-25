@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memoriza Saúde</title>
+  <title>Memoriza Saúde - Lembretes</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="script.js">
   <style>
     * {
-      margin-left: 10px;
+      margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
@@ -45,9 +46,9 @@
     }
 
     #logo {
-        height: 150px;
-  max-width: 1000px; /* ajuste conforme necessário */
-  width: auto;  
+      height: 150px;
+      max-width: 1000px;
+      width: auto;
     }
 
     .menu-toggle {
@@ -63,82 +64,49 @@
       margin: 4px 0;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    main {
       padding: 2rem;
+      max-width: 600px;
+      margin: 8vh auto;
+      border-radius: 15px;
       background: #FFEFD2;
     }
 
-    .hero img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    .hero h1 {
-      font-size: 1.8rem;
-      color: #3D3D3D;
-      margin-top: 1rem;
-    }
-
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .section img {
-    display: block;
-    max-width: 100%;
-    height: auto; 
-    border-radius: 12px;
-    margin-bottom: 20px; 
-    margin-left: auto;   
-    margin-right: auto;  
-    }
-
-    .img-centralizada {
-    display: block;
-    max-width: 30%; 
-    width: 75%;
-    height: 60%;
-    border-radius: 12px;
-    margin: 20px auto;
-    }
-
-    .section h2 {
-      font-size: 1.6rem;
-      color: #3D3D3D;
-      margin-bottom: 0.5rem;
-    }
-
-    .section p {
-      font-size: 1rem;
+    main h1 {
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: #7FAF95;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-    }
-
-    .highlight {
-      color: #C2A32E;
-      font-weight: 800;
-    }
-
-    .consultas-img {
-      max-width: 90%;
+    .lembrete {
+      border: 2px dashed #ffa500;
+      padding: 20px;
+      margin-bottom: 20px;
       border-radius: 12px;
-      margin: 1rem auto;
+      background-color: #fffaf2;
+    }
+
+    .lembrete h2 {
+      font-size: 1.5em;
+      color: #d35400;
+      margin-bottom: 0.5em;
+    }
+
+    .lembrete p {
+      margin-bottom: 1em;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 0.7em 1.2em;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
     }
 
     footer {
@@ -155,7 +123,7 @@
       text-decoration: none;
     }
 
-    /* Responsividade e menu mobile */
+    /* Responsividade */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -181,178 +149,63 @@
         display: flex;
       }
     }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.4rem;
-      }
-      nav a {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (min-width: 600px) {
-      .hero h1 {
-        font-size: 1.6rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-    }
-
-    @media (min-width: 1300px) {
-     .hero  h1 {
-        font-size: 2.5rem;
-      }
-    }
-    body {
-  font-family: Arial, sans-serif;
-  font-size: 1.2em;
-  background-color: #fdf6ec;
-  color: #333;
-  padding: 20px;
-}
-
-main {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-}
-
-h1 {
-  text-align: center;
-  font-size: 1.8em;
-  margin-bottom: 20px;
-}
-
-.lembrete {
-  border: 2px dashed #ffa500;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  background-color: #fffaf2;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #d35400;
-}
-
-button {
-  font-size: 1em;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background-color: #27ae60;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #1e8449;
-}
-
-footer {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 1em;
-  color: #666;
-}
-
-</style>
+  </style>
 </head>
 <body>
+
   <header>
-    <img src="img/logomemorizasaude.png" alt="Memoriza Saúde" id="logo">
+    <img src="img_diario_da_saude/logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
     <nav>
-      <a href="#inicio">Início</a>
+      <a href="inicio.html">Início</a>
       <a href="#lembretes">Lembretes</a>
       <a href="#recompensas">Recompensa</a>
       <a href="#contato">Contato</a>
-      <a href="#integrantes">Integrantes</a>
+      <a href="integrantes.html">Integrantes</a>
       <a href="#faq">FAQ</a>
     </nav>
-   
   </header>
 
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solução para Absenteísmo de Idosos</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav>
-        <a href="#diariosaude">Diário de Saúde</a>
-        <a href="#lembretes">Lembretes</a>
-        <a href="#metassaude">Metas de Saúde</a>
-        
-      </nav>
-   
-    <h1 class="soluçoes">Lembretes</h1>
-
-  
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lembretes de Saúde</title>
-  <link rel="stylesheet" href="lembretes.css"/>
-</head>
-<body>
   <main>
     <h1>🔔 Meus Lembretes de Saúde</h1>
 
     <section class="lembrete">
-      <h2> Consulta de Oftalmologista</h2>
-      <p id="lembrete1">Você tem uma consulta amanhã às 9h. Com o Dr.Fabio Melo, médico de oftalmologista.</p>
+      <h2>Consulta de Oftalmologista</h2>
+      <p id="lembrete1">Você tem uma consulta amanhã às 9h com o Dr. Fabio Melo, oftalmologista.</p>
       <button onclick="lerTexto('lembrete1')">🔊 Ouvir</button>
     </section>
 
     <section class="lembrete">
-      <h2> Consulta de Cardiologista</h2>
-      <p id="lembrete2">Seu exame está marcado para quarta-feira às 8h. Com o Dr.Silvio Andrade, médico de cardiologista.</p>
+      <h2>Consulta de Cardiologista</h2>
+      <p id="lembrete2">Seu exame está marcado para quarta-feira às 8h com o Dr. Silvio Andrade, cardiologista.</p>
       <button onclick="lerTexto('lembrete2')">🔊 Ouvir</button>
     </section>
 
     <section class="lembrete">
       <h2>Psicólogo</h2>
-      <p id="lembrete3">Lembre-se da consulta de psicólogo às 11h na sexta-feira . Você vai fazer com a Dra.Maria Fernandes, sua psicóloga partícular.</p>
+      <p id="lembrete3">Lembre-se da consulta com a Dra. Maria Fernandes, sua psicóloga particular, às 11h na sexta-feira.</p>
       <button onclick="lerTexto('lembrete3')">🔊 Ouvir</button>
     </section>
-
-    <footer>
-      <p>👵 Plataforma pensada com carinho para sua saúde e bem-estar 💖</p>
-    </footer>
   </main>
+
   <footer>
-    <a href="#faq">FAQ</a> |
-    <a href="#contato">Contato</a> |
-    <a href="#lembretes">Lembretes</a> |
-    <a href="#recompensas">Recompensa</a>
+    <a href="faq.html">Lembretes</a> |
+    <a href="contato.html">Recompensa</a> |
+    <a href="lembretes.html">Contato</a> |
+    <a href="recompensas.html">Faq</a>
   </footer>
 
-  <script src="lembretes.js"></script>
+  <script>
+    function lerTexto(id) {
+      const texto = document.getElementById(id).innerText;
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(texto);
+      synth.speak(utter);
+    }
+  </script>
 </body>
 </html>

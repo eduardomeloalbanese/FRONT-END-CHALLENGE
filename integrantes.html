@@ -6,6 +6,12 @@
   <title>Memoriza Saúde</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
     html, body {
       height: 100%;
       margin: 0;
@@ -183,19 +189,19 @@
 <body>
   <div class="wrapper">
     <header>
-      <img src="logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
+      <img src="img_integrantes/logo_memorizasaude.png" alt="Memoriza Saúde" id="logo">
 <div class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('active')">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
       <nav id="nav">
-        <a href="inicio.html">Início</a>
-        <a href="#lembretes">Lembretes</a>
-        <a href="#recompensas">Recompensa</a>
-        <a href="#contato">Contato</a>
-        <a href="#integrantes">Integrantes</a>
-        <a href="#faq">FAQ</a>
+      <a href="inicio.html">Início</a>
+      <a href="lembretes.html">Lembretes</a>
+      <a href="recompensas.html">Recompensa</a>
+      <a href="contato.html">Contato</a>
+      <a href="integrantes.html">Integrantes</a>
+      <a href="faq.html">FAQ</a>
       </nav>
     </header>
 
@@ -203,29 +209,32 @@
       <h1>Identificação dos Alunos</h1>
       <div class="container">
         <div class="card">
-          <img src="foto_nathan.jpg" alt="Foto de Nathan" />
+          <img src="img_integrantes/foto_nathan.jpg" alt="Foto de Nathan" />
           <h2>Nathan Gonçalves Pereira Mendes</h2>
           <p>RM: 564666</p>
+          <a href="https://www.linkedin.com/in/nathan-gpmendes"> Linkedin Nathan</a>
         </div>
         <div class="card">
-          <img src="foto_guilherme.jpg" alt="Foto de Guilherme" />
+          <img src="img_integrantes/foto_guilherme.jpg" alt="Foto de Guilherme" />
           <h2>Guilherme de Andrade Martini</h2>
           <p>RM: 566087</p>
+          <a href="https://www.linkedin.com/in/guilherme-de-andrade-martini-994648348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin Guilherme</a>
         </div>
         <div class="card">
-          <img src="foto_eduardo.png" alt="Foto de Eduardo" />
+          <img src="img_integrantes/foto_eduardo.png" alt="Foto de Eduardo" />
           <h2>Eduardo de Melo Albanese</h2>
           <p>RM: 561790</p>
+          <a href="https://www.linkedin.com/in/eduardo-de-melo-albanese-605043236/">Linkedin Eduardo</a>
         </div>
       </div>
     </main>
 
-    <footer>
-      <a href="#faq">FAQ</a> |
-      <a href="#contato">Contato</a> |
-      <a href="#lembretes">Lembretes</a> |
-      <a href="#recompensas">Recompensa</a>
-    </footer>
+  <footer>
+    <a href="faq.html">Lembretes</a> |
+    <a href="contato.html">Recompensa</a> |
+    <a href="lembretes.html">Contato</a> |
+    <a href="recompensas.html">Faq</a>
+  </footer>
   </div>
 </body>
 </html>
